@@ -17,7 +17,7 @@ Easy WebPlayer 是一个简易的前端网页HTML播放器，可以部署在 Clo
 ## 参数说明
 
 - `via`：指定流的播放方式。`via=browser` 表示通过浏览器播放流，`via=player` 表示通过 VLC、PotPlayer 等播放器播放流。
-- `app`：指定应用名称，默认为 `live`。
+- `app`：指定直播应用名称或视频流路径，默认为 `live`。
 - `type`：指定视频流文件格式。
 - `streamid`：指定要播放的流的 ID。
 
@@ -45,6 +45,16 @@ if (!via || !type || !streamid || !secret) {
 最后的播放地址应为：
 播放器：`https://stream.palakama.cfd/?via=player&app=live&type=flv&streamid=PyongYang-Major&secret=1145141919810`
 浏览器：`https://stream.palakama.cfd/?via=browser&app=live&type=flv&streamid=PyongYang-Major&secret=1145141919810`
+
+## 实战演示
+
+播放器拉流地址：`https://demo.palakama.cfd/?via=player&app=obj/media-fe/xgplayer_doc_video/flv&type=flv&streamid=xgplayer-demo-360p`
+
+浏览器拉流地址：`https://demo.palakama.cfd/?via=browser&app=obj/media-fe/xgplayer_doc_video/flv&type=flv&streamid=xgplayer-demo-360p`
+
+用户名和密码都是`demo`
+
+实际真实源站URL地址：`https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv`
 
 ## 小Tips
 

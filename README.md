@@ -4,8 +4,8 @@ Easy WebPlayer 是一个简易的前端网页HTML播放器，可以部署在 Clo
 
 该项目有两种形式：
 
-1. **Direct 形式**：通过鉴权后，直接从后端服务器拉取视频流。
-2. **Reverse Proxy 形式**：通过 Cloudflare Workers 的反向代理从源服务器拉取视频流，有效保护源站服务器。
+1. **Direct 形式**：通过鉴权后，直接从后端服务器拉取视频流，适用于音视频点播等场景。
+2. **Reverse Proxy 形式**：通过 Cloudflare Workers 的反向代理从源服务器拉取视频流，适用于音视频直播等场景。
 
 ## 特性
 
@@ -50,13 +50,14 @@ if (!via || !type || !streamid || !secret) {
 
 ## 实战演示
 
-播放器拉流地址：`https://demo.palakama.cfd/?via=player&app=obj/media-fe/xgplayer_doc_video/flv&type=flv&streamid=xgplayer-demo-360p`
+播放器拉流地址：`https://demo.palakama.cfd/?via=player&app=live/flv&type=flv&streamid=demo`
 
-浏览器拉流地址：`https://demo.palakama.cfd/?via=browser&app=obj/media-fe/xgplayer_doc_video/flv&type=flv&streamid=xgplayer-demo-360p`
+浏览器拉流地址：`https://demo.palakama.cfd/?via=browser&app=live&type=ts&streamid=demo`
 
 用户名和密码都是`demo`
 
-实际真实源站URL地址：`https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv`
+# 感谢YxVM赞助提供的演示服务器
+https://yxvm.com/
 
 ## 小Tips
 

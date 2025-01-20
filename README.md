@@ -50,7 +50,7 @@ if (!via || !type || !streamid || !secret) {
 
 ## 实战演示
 
-播放器拉流地址：`https://demo.palakama.cfd/?via=player&app=live/flv&type=flv&streamid=demo`
+播放器拉流地址：`https://demo.palakama.cfd/?via=player&app=live&type=flv&streamid=demo`
 
 浏览器拉流地址：`https://demo.palakama.cfd/?via=browser&app=live&type=ts&streamid=demo`
 

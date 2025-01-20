@@ -12,6 +12,8 @@
 ---------------------------------------------------------------------------------------------
 浏览器拉流演示：https://demo.palakama.cfd/?via=browser&app=obj/media-fe/xgplayer_doc_video/flv&type=flv&streamid=xgplayer-demo-360p
 
+用户名和密码都是demo
+
 演示站使用proxy模式，视频源真实地址为https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv
 
 ---------------------------------------------------------------------------------------------

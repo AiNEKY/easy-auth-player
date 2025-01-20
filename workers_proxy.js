@@ -14,7 +14,7 @@ export default {
     }
 
     // Extract parameters
-    const app = params.get('app') || 'live'; //默认值为live
+    const app = params.get('app') || 'live';
     const via = params.get('via');
     const type = params.get('type');
     const streamid = params.get('streamid');
@@ -40,14 +40,14 @@ export default {
         status: backendResponse.status,
       });
     } else if (via === 'browser') {
-      // Generate HTML with mpegts.js player and improved CSS
+      // Generate HTML with mpegts.js player
       const html = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>PALAKAMA - Web Stream Player for Stream3</title>
+          <title>Web Player</title>
           <script src="https://cdn.jsdelivr.net/npm/mpegts.js"></script>
           <style>
             body {
@@ -56,17 +56,17 @@ export default {
               display: flex;
               justify-content: center;
               align-items: center;
-              background: linear-gradient(135deg, #000428, #004e92);
+              background: linear-gradient(135deg, #ff0888, #66ccff);
               height: 100vh;
               color: white;
               font-family: Arial, sans-serif;
             }
             video {
-              max-width: 90%;
-              max-height: 80%;
-              border: 2px solid white;
-              border-radius: 8px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+              max-width: 95%;
+              max-height: 95%;
+              border: 3px solid #ffffff;
+              border-radius: 10px;
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
             }
           </style>
         </head>
@@ -74,7 +74,7 @@ export default {
           <video id="videoElement" controls autoplay muted></video>
           <script>
             (function() {
-              const url = '${url.origin}/?via=player&app=${app}&streamid=${streamid}&type=${type}&key=${key}';
+              const url = '${url.origin}/?via=player&type=${type}&app=${app}&streamid=${streamid}&key=${key}';
               const videoElement = document.getElementById('videoElement');
 
               if (mpegts.getFeatureList().mseLivePlayback) {

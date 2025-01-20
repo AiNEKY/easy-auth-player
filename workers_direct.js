@@ -4,11 +4,8 @@ export default {
     const params = url.searchParams;
 
     // HTTP Basic Auth
-    const USERNAME = 'username';
-    const PASSWORD = 'password';
-    const validAuth = `Basic ${btoa(`${USERNAME}:${PASSWORD}`)}`;
-
     const authHeader = request.headers.get('Authorization');
+    const validAuth = `Basic ${btoa('username:password')}`; // Replace with secure storage for credentials
     if (authHeader !== validAuth) {
       return new Response('Unauthorized', {
         status: 401,
@@ -17,12 +14,14 @@ export default {
     }
 
     // Extract parameters
-    const app = params.get('app') || 'live'; //默认值为live
+    const app = params.get('app') || 'live';
     const via = params.get('via');
     const type = params.get('type');
     const streamid = params.get('streamid');
+    const key = params.get('key');
 
-    if (!via || !type || !streamid) {
+    // Validate required parameters
+    if (!via || !type || !streamid || !key) {
       return new Response('Missing required parameters', { status: 400 });
     }
 
@@ -38,7 +37,7 @@ export default {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>PALAKAMA Stream3 - Web Stream Player</title>
+          <title>Web Player</title>
           <script src="https://cdn.jsdelivr.net/npm/mpegts.js"></script>
           <style>
             body {
@@ -65,7 +64,7 @@ export default {
           <video id="videoElement" controls autoplay muted></video>
           <script>
             (function() {
-              const url = '${url.origin}/?via=player&type=${type}&app=${app}&streamid=${streamid}';
+              const url = '${url.origin}/?via=player&type=${type}&app=${app}&streamid=${streamid}&key=${key}';
               const videoElement = document.getElementById('videoElement');
 
               if (mpegts.getFeatureList().mseLivePlayback) {

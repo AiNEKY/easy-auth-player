@@ -43,7 +43,9 @@ if (!via || !type || !streamid || !secret) {
 ```
 
 最后的播放地址应为：
+
 播放器：`https://stream.palakama.cfd/?via=player&app=live&type=flv&streamid=PyongYang-Major&secret=1145141919810`
+
 浏览器：`https://stream.palakama.cfd/?via=browser&app=live&type=flv&streamid=PyongYang-Major&secret=1145141919810`
 
 ## 实战演示

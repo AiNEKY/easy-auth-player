@@ -52,33 +52,3 @@ if (!via || !type || !streamid || !secret) {
 
 设置鉴权机制：确保 `secret` 和其他鉴权参数已正确配置。
 
-## 核心代码
-
-```js
-addEventListener('fetch', event => {
-  const url = new URL(event.request.url)
-  const { searchParams } = url
-  const via = searchParams.get('via')
-  const type = searchParams.get('type')
-  const streamid = searchParams.get('streamid')
-  const secret = searchParams.get('secret')
-
-  // 参数验证
-  if (!via || !type || !streamid || !secret) {
-    return event.respondWith(new Response('Missing required parameters', { status: 400 }))
-  }
-
-  // 拼接后端 URL
-  const backendURL = `https://example.com/live/${streamid}.${type}?secret=${secret}`
-
-  // 代理请求
-  const requestHeaders = new Headers(event.request.headers)
-  const response = fetch(backendURL, {
-    method: 'GET',
-    headers: requestHeaders,
-  })
-
-  event.respondWith(response)
-})
-```
-

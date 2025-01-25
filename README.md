@@ -1,6 +1,4 @@
-# Easy WebPlayer
-
-Easy WebPlayer 是一个简易的前端网页HTML播放器，可以部署在 Cloudflare Workers 上，同时引入 HTTP Basic Auth 鉴权。
+# Easy Auth Player
 
 该项目有两种形式：
 
